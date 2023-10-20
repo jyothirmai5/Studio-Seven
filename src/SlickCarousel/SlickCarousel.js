@@ -3,12 +3,16 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './SlickCarousel.css'; // Create a CSS file for custom styling
-import Image1 from '../assets/Bedroom/B1/image1.jpeg';
-import Image2 from '../assets/Bedroom/B1/image2.jpeg';
+import Image1 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_1.jpg';
+import Image2 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_2.jpg';
+import Image3 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_3.jpg';
+import Image4 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_4.jpg';
 
 const images = [
- Image1,
- Image2
+  Image1,
+  Image2,
+  Image3,
+  Image4
 ];
 
 const SlickCarousel = () => {
@@ -16,8 +20,8 @@ const SlickCarousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    arrows:true,
-    autoplay:true,
+    arrows: true,
+    autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
