@@ -1,9 +1,11 @@
 .slick-carousel {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .slick-slide img {
-    width: 100%;
-    height: auto;
-  }
+  max-width: 80%;
+  height: 100%;
+  margin: 20px auto 20px auto;
+  padding-bottom: 15px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+}
