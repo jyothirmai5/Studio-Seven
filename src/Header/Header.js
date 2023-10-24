@@ -3,29 +3,28 @@ import {
     AppBar,
     Toolbar,
     IconButton,
-    Typography,
     Button,
     InputBase,
     Paper
 } from '@mui/material';
+import "./Header.css";
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { makeStyles } from '@mui/styles';
+import logo from "../assets/studioseven_logo.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: '#222 !important',
-        marginBottom: '24px'
+        marginBottom: '24px',
+        boxShadow: 'none',
     },
     toolbar: {
         display: 'flex',
         justifyContent: 'space-between',
     },
-    logo: {
-        fontWeight: 'bold !important',
-        fontSize: '24px !important',
-    },
+
     search: {
         position: 'relative',
         borderRadius: '12px',
@@ -63,29 +62,45 @@ const useStyles = makeStyles((theme) => ({
 function Header() {
     const classes = useStyles();
     return (
-        <AppBar position="static" className={classes.root}>
-            <Toolbar className={classes.toolbar}>
-                <Typography className={classes.logo}>Seven For Kids</Typography>
-                <Paper
-                    component="form"
-                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
-                >
-                    <InputBase
-                        sx={{ ml: 1, flex: 1 }}
-                        placeholder="Search..."
-                        inputProps={{ 'aria-label': 'search...' }}
-                    />
-                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                        <SearchIcon />
-                    </IconButton>
-                </Paper>
-                <Button color="inherit">Categories</Button>
-                <IconButton color="inherit">
-                    <FavoriteIcon />
-                </IconButton>
-                <IconButton color="inherit">
-                    <ShoppingCartIcon />
-                </IconButton>
+        <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
+            <Toolbar className={classes.toolbar}
+                sx={{ backgroundColor: "#faf5ef", boxShadow: 'none' }}
+            >
+                <div className='toolbar-content'>
+                    <div className='logo'>
+                        <img src={logo} className='logo-banner' alt="logo"></img>
+                    </div>
+                    <div className='toolbar-functions'>
+                        <Paper
+                            component="form"
+                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '300px', height: '80%', boxShadow: 'none' }}
+                        >
+                            <InputBase
+                                sx={{ ml: 1, flex: 1 }}
+                                placeholder="Search..."
+                                inputProps={{ 'aria-label': 'search...' }}
+                            />
+                            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                                <SearchIcon />
+                            </IconButton>
+                        </Paper>
+                        <Button
+                            sx={{ color: "#58869e", margin: '10px', fontWeight: 'bold' }}
+                        >
+                            Categories
+                        </Button>
+                        <div className='icon-div'>
+                            <IconButton
+                                sx={{ color: "#58869e" }}>
+                                <FavoriteIcon />
+                            </IconButton>
+                            <IconButton
+                                sx={{ color: "#58869e" }}>
+                                <ShoppingCartIcon />
+                            </IconButton>
+                        </div>
+                    </div>
+                </div>
             </Toolbar>
         </AppBar>
     );
