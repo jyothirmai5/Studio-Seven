@@ -22,7 +22,7 @@ export const categories = [
     {
       tilte:'Soothing Blue-  Kids Wall Decor Set with Frames, Photos, and Books',
       image:'',
-      description:'Elevate the look of your kids room with our exquisite wall decor set. Featuring a perfectly picked beautiful doll from our best collection , stylish frames for your cherished photos, and a selection of captivating books',
+      description: " Elevate the look of your kid's room with our exquisite wall decor set. Featuring a perfectly picked beautiful doll from our best collection , stylish frames for your cherished photos, and a selection of captivating books",
       price:'150$'
     },  
     {
@@ -43,13 +43,37 @@ export const categories = [
 
   {
     title: 'Bedroom',
-    imageUrl: bedroomImage
+    imageUrl: bedroomImage,
     product: [
       {
-        tilte:'Kids Girrafe Rug',
+        tilte:'Minimalist Kids Bed - Twin size',
         image:'',
-        description:'Safari Dreams: Kids Giraffe Rugs Collection. These vibrant and playful rugs bring the magic of the savannah right into your kids room. Crafted with care, each rug is not only an exciting decorative piece but also a cozy haven for little feet.',
-        price:'95$'
+        description:'',
+        price:'1075$'
+      },
+      {
+        tilte:'Minimalist Kids Bed - Twin size',
+        image:'',
+        description:'',
+        price:'1075$'
+      },
+      {
+        tilte:'Minimalist Kids Bed - Twin size',
+        image:'',
+        description:'',
+        price:'1075$'
+      },
+      {
+        tilte:'Minimalist Kids Bed - Twin size',
+        image:'',
+        description:'',
+        price:'1075$'
+      },
+      {
+        tilte:'Minimalist Kids Bed - Twin size',
+        image:'',
+        description:'',
+        price:'1075$'
       }
     ]
   },
