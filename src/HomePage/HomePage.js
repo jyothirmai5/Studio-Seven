@@ -7,6 +7,7 @@ import {
     Typography,
 } from '@mui/material';
 import { categories } from '../Constants';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     categoryCard: {
@@ -29,11 +30,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 function HomePage() {
     const classes = useStyles();
+    const navigate = useNavigate();
+    const redirectToProducts = (title) => {
+        navigate('/' + title + '/products')
+    }
     return (<Layout>
         <SlickCarousel />
         <Grid container spacing={2}>
             {categories.map((category, index) => (
-                <Grid item xs={12} sm={6} md={3} key={index}>
+                <Grid item xs={12} sm={6} md={3} key={index} onClick={() => redirectToProducts(category.title)}>
                     <Paper
                         className={classes.categoryCard}
                         style={{ backgroundImage: `url(${category.imageUrl})` }}
