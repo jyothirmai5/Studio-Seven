@@ -9,6 +9,7 @@ import {
 import D1 from "../assets/Decor/D1/image1.png";
 import D2 from "../assets/Decor/D1/image2.jpeg";
 import "./ProductDetails.css";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ProductDetails = () => {
   return (
@@ -26,10 +27,15 @@ const ProductDetails = () => {
         <div className="col-2">
           <p>Home/Decor/Rugs</p>
           <h1 className="ProductTittle">Kids Girrafe Rug</h1>
-          <h4>$100.00</h4>
+          <h4>$99.99</h4>
           <input type="number" value={1}></input>
           <div class="section-text">
-            <button className="btn">Add To Cart</button>
+            <a href="" className="btn">
+              Add To Cart
+            </a>
+            <a href="" className="btn-fav">
+              &#10084;
+            </a>
             <h3>Product Description</h3>
             <p className="ProductDescription">
               Safari Dreams: Kids Giraffe Rugs Collection.<br></br>These vibrant
