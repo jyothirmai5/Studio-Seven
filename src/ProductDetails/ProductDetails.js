@@ -9,6 +9,7 @@ import {
 import D1 from "../assets/Decor/D1/image1.png";
 import D2 from "../assets/Decor/D1/image2.jpeg";
 import "./ProductDetails.css";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ProductDetails = () => {
   return (
@@ -26,7 +27,7 @@ const ProductDetails = () => {
         <div className="col-2">
           <p>Home/Decor/Rugs</p>
           <h1 className="ProductTittle">Kids Girrafe Rug</h1>
-          <h4>$100.00</h4>
+          <h4>$99.99</h4>
           <input type="number" value={1}></input>
           <div class="section-text">
             <a href="" className="btn">
