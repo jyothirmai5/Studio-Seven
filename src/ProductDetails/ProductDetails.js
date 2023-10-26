@@ -29,7 +29,12 @@ const ProductDetails = () => {
           <h4>$100.00</h4>
           <input type="number" value={1}></input>
           <div class="section-text">
-            <button className="btn">Add To Cart</button>
+            <a href="" className="btn">
+              Add To Cart
+            </a>
+            <a href="" className="btn-fav">
+              &#10084;
+            </a>
             <h3>Product Description</h3>
             <p className="ProductDescription">
               Safari Dreams: Kids Giraffe Rugs Collection.<br></br>These vibrant

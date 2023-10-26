@@ -60,14 +60,32 @@ cursor: pointer;
   padding: 8px 30px;
   margin: 30px 0;
   border-radius: 30px;
+  border: 2px solid #352f2f;
+  text-decoration: none;
 }
 
-.btn hover {
+.btn :hover {
+  background: #352f2f;
   cursor: pointer;
-  background: rgb(53, 53, 53);
-  color: white;
-  }
 
+}
+
+.btn-fav {
+  display: inline-table;
+  background: #c2bfbf;
+  color: #ffffff;
+  border-radius: 30px;
+  padding: 4px 10px;
+  margin: 10px 0;
+  font-size: 150%;  
+  text-decoration: none;
+}
+
+.btn-fav :hover {
+  cursor: pointer;
+  background: rgb(36, 35, 35);
+  color: rgb(176, 0, 0);
+}
 
   /* general col-2*/
   .col-2 {
