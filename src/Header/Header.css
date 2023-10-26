@@ -21,6 +21,10 @@
     padding: 15px;
 }
 
-.icon-div{
+.logo {
+    cursor: pointer;
+}
+
+.icon-div {
     margin: auto;
 }

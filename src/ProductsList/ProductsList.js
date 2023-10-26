@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardMedia, Typography, Container, Grid, Button } from '@mui/material';
 import { categories } from '../Constants';
 import { useParams, useNavigate } from 'react-router-dom';
+import Layout from '../Layout/Layout';
 
 const ProductList = () => {
   const { category } = useParams();
@@ -19,33 +20,35 @@ const ProductList = () => {
   }, []);
 
   return (
-    <Container sx={{ padding: '40px' }}>
-      <Grid container spacing={2}>
-        {products && products.map((product, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="250"
-                image={require(`../assets/${product.image[0]}`)}
-                alt={product.name}
-              />
-              <CardContent>
-                <Typography variant="h6" component="div">
-                  {product.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Price: ${product.price}
-                </Typography>
-                <Button variant="contained" color="primary" onClick={() => redirectToProductDetails(product.id)}>
-                  Add to Cart
-                </Button>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <Layout>
+      <Container sx={{ padding: '40px' }}>
+        <Grid container spacing={2}>
+          {products && products.map((product, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  height="250"
+                  image={require(`../assets/${product.image[0]}`)}
+                  alt={product.name}
+                />
+                <CardContent>
+                  <Typography variant="h6" component="div">
+                    {product.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Price: ${product.price}
+                  </Typography>
+                  <Button variant="contained" color="primary" onClick={() => redirectToProductDetails(product.id)}>
+                    Show more
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Layout>
   );
 };
 
