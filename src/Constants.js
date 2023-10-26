@@ -11,7 +11,7 @@ export const categories = [
         tilte: "Kids Girrafe Rug",
         image: "",
         description:
-          "Safari Dreams: Kids Giraffe Rugs Collection. These vibrant and playful rugs bring the magic of the savannah right into your kids room. Crafted with care, each rug is not only an exciting decorative piece but also a cozy haven for little feet.",
+          "Safari Dreams: Kid's Giraffe Rugs Collection. These vibrant and playful rugs bring the magic of the savannah right into your Kid's room. Crafted with care, each rug is not only an exciting decorative piece but also a cozy haven for little feet.",
         price: "$94.99",
       },
       {
@@ -26,7 +26,7 @@ export const categories = [
           "Soothing Blue-  Kids Wall Decor Set with Frames, Photos, and Books",
         image: "",
         description:
-          " Elevate the look of your kid's room with our exquisite wall decor set. Featuring a perfectly picked beautiful doll from our best collection , stylish frames for your cherished photos, and a selection of captivating books",
+          "Elevate the look of your Kid's room with our exquisite wall decor set. Featuring a perfectly picked beautiful doll from our best collection , stylish frames for your cherished photos, and a selection of captivating books",
         price: "$149.99",
       },
       {
@@ -37,7 +37,7 @@ export const categories = [
         price: "$1.399,99",
       },
       {
-        tilte: "Foxy Adventure: Kids - Wall Decor Set with Adorable Fox Theme",
+        tilte: "Foxy Adventure: Kid's - Wall Decor Set with Adorable Fox Theme",
         image: "",
         description:
           "This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.",
@@ -92,7 +92,7 @@ export const categories = [
     imageUrl: playroomImage,
     product: [
       {
-        tilte: "Adventure Haven Kids Bed Playroom Set",
+        tilte: "Adventure Haven Kid's Bed Playroom Set",
         image: "",
         description:
           "Introducing our Little Explorers' Playtime Toy Set, designed for 3-year-old kids with an appetite for play and imagination. This set includes a collection of cars, carts, small trains, and cars toys that match the holes for endless creative fun. The soft, neutral color palette complements any home decor, making it not just a delightful playset but also a stylish addition to your living space.",
@@ -119,7 +119,7 @@ export const categories = [
         price: "$59.99",
       },
       {
-        tilte: "Elephant Dreams Kids' Table and Chairs Set",
+        tilte: "Elephant Dreams Kids's Table and Chairs Set",
         image: "",
         description:
           "The simplicity of our Elephant Dreams Kids' Table and Chairs Set brings a touch of whimsy to any child's playroom or bedroom. With adorable elephant-shaped chairs and a wooden table, this set is perfect for activities, arts and crafts, or snack time. The charming design and sturdy construction make it a delightful addition to your child's space.",
