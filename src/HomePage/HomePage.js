@@ -10,23 +10,23 @@ import { categories } from '../Constants';
 import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-    categoryCard: {
-        height: '200px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center center',
-        '&:hover': {
-            cursor: 'pointer',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        },
+  categoryCard: {
+    height: "200px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    "&:hover": {
+      cursor: "pointer",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
-    categoryTitle: {
-        color: 'white',
-    },
+  },
+  categoryTitle: {
+    color: "white",
+  },
 }));
 function HomePage() {
     const classes = useStyles();
