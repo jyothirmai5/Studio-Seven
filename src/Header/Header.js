@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: '#222 !important',
         marginBottom: '24px',
         boxShadow: 'none',
-    },
+    }, 
     toolbar: {
         display: 'flex',
         justifyContent: 'space-between',

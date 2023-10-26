@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardMedia, Typography, Container, Grid, Button } from '@mui/material';
 import { categories } from '../Constants';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const ProductList = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
-
+  const navigate = useNavigate();
+  const redirectToProductDetails = (id) => {
+    navigate('/' + category + '/products/' + id);
+  }
   useEffect(() => {
     categories.map((item) => {
       if (item.title === category) {
@@ -16,7 +19,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <Container>
+    <Container sx={{ padding: '40px' }}>
       <Grid container spacing={2}>
         {products && products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -24,7 +27,7 @@ const ProductList = () => {
               <CardMedia
                 component="img"
                 height="250"
-                image={product.image}
+                image={require(`../assets/${product.image[0]}`)}
                 alt={product.name}
               />
               <CardContent>
@@ -34,7 +37,7 @@ const ProductList = () => {
                 <Typography variant="body2" color="text.secondary">
                   Price: ${product.price}
                 </Typography>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={() => redirectToProductDetails(product.id)}>
                   Add to Cart
                 </Button>
               </CardContent>
