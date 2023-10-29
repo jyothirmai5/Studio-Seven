@@ -4,7 +4,7 @@ import playroomImage from './assets/Playroom/P1/image1.jpeg';
 
 export const categories = [
   {
-    title: 'Decor',
+    title: "Decor",
     imageUrl: decorImage,
     product: [
       {
@@ -46,7 +46,7 @@ export const categories = [
   },
 
   {
-    title: 'Bedroom',
+    title: "Bedroom",
     imageUrl: bedroomImage,
     product: [
       {
@@ -87,7 +87,7 @@ export const categories = [
     ]
   },
   {
-    title: 'Play room',
+    title: "Play room",
     imageUrl: playroomImage,
     product: [
       {
