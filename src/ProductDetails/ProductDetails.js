@@ -1,25 +1,39 @@
-import React from "react";
-import {
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-} from "@mui/material";
-import D1 from "../assets/Decor/D1/image1.png";
-import D2 from "../assets/Decor/D1/image2.jpeg";
+import React, { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
+import { categories } from '../Constants';
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
+  const { category, id } = useParams();
+  const [productImages, setProductImages] = useState([]);
+  const [currentImage, setCurrentImage] = useState('');
+  useEffect(() => {
+    categories.map((item) => {
+      if (item.title === category) {
+        item.product.map((product) => {
+          if (product.id === id) {
+            console.log(product.image)
+            setProductImages(product.image);
+            setCurrentImage(product.image[0]);
+          }
+        })
+
+      }
+    })
+  }, []);
+  const changeImage = (image) => {
+    setCurrentImage(image);
+  }
   return (
+    productImages && currentImage &&
     <div className="small-container single-product">
       <div className="row">
         <div className="col-2">
-          <img src={D1} width="100%"></img>
+          <img src={require(`../assets/${currentImage}`)} width="100%"></img>
           <div className="small-img-row">
             <div className="small-img-col">
-              <img src={D1} width="100%"></img>
-              <img src={D2} width="100%"></img>
+              <img src={require(`../assets/${productImages[0]}`)} onClick={() => changeImage(productImages[0])} width="100%"></img>
+              <img src={require(`../assets/${productImages[1]}`)} onClick={() => changeImage(productImages[1])} width="100%"></img>
             </div>
           </div>
         </div>
