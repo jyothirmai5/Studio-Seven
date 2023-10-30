@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { makeStyles } from '@mui/styles';
 import logo from "../assets/studioseven_logo.svg";
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
     const classes = useStyles();
+    const navigate = useNavigate();
     return (
         <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
             <Toolbar className={classes.toolbar}
@@ -68,7 +70,7 @@ function Header() {
             >
                 <div className='toolbar-content'>
                     <div className='logo'>
-                        <img src={logo} className='logo-banner' alt="logo"></img>
+                        <img src={logo} className='logo-banner' alt="logo" onClick={() => navigate('/')}></img>
                     </div>
                     <div className='toolbar-functions'>
                         <Paper
@@ -84,11 +86,6 @@ function Header() {
                                 <SearchIcon />
                             </IconButton>
                         </Paper>
-                        <Button
-                            sx={{ color: "#58869e", margin: '10px', fontWeight: 'bold' }}
-                        >
-                            Categories
-                        </Button>
                         <div className='icon-div'>
                             <IconButton
                                 sx={{ color: "#58869e" }}>
