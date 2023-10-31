@@ -33,7 +33,7 @@ function Footer() {
             </div>
         </div>
         <div className="footer-bottom">
-            <p>&copy; 2023 Your Company</p>
+            <p>&copy; 2023 Studio Seven</p>
         </div>
     </footer>);
 }

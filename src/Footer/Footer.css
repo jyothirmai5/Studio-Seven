@@ -1,6 +1,6 @@
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #faf5ef;
+    color: #58869e;
     padding: 20px 0;
     margin-top: 24px;
   }
@@ -8,6 +8,7 @@
   .footer-content {
     display: flex;
     justify-content: space-between;
+    align-content:center;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -33,7 +34,7 @@
   
   .footer-bottom {
     text-align: center;
-    background-color: #222;
+    background-color: #faf5ef;
     padding: 10px 0;
   }
   

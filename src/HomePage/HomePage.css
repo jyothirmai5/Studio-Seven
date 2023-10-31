@@ -1,0 +1,53 @@
+/* home page styling */
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.css-mhc70k-MuiGrid-root{
+    justify-content: center;
+    width: 100%;
+}
+
+.hp-sale{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width:80%;
+
+    margin: 0, auto;
+    padding-bottom: 30px;
+}
+
+
+
+
+.sale-title{
+    margin: 0,auto;
+    color: #58869e;
+    width: 100%;
+}
+
+.category-title{
+    margin: 0,auto;
+    color: #58869e;
+    width: 80%;
+
+}
+
+.sale-pc{
+    margin: 0,auto;
+    width: 100%;
+
+}
+
+.sale-image{
+    width:100%;
+
+}
