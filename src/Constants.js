@@ -53,35 +53,35 @@ export const categories = [
         id: "B1",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B1/image1.jpeg', 'Bedroom/B1/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "B2",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B2/image1.jpeg', 'Bedroom/B2/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "B3",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B3/image1.jpeg', 'Bedroom/B3/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "B4",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B4/image1.jpeg', 'Bedroom/B4/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "B5",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B5/image1.jpeg', 'Bedroom/B5/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       }
     ]
@@ -94,35 +94,35 @@ export const categories = [
         id: "P1",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B1/image1.jpeg', 'Bedroom/B1/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "P2",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B2/image1.jpeg', 'Bedroom/B2/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "P3",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B3/image1.jpeg', 'Bedroom/B3/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "P4",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B4/image1.jpeg', 'Bedroom/B4/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       },
       {
         id: "P5",
         tilte: 'Minimalist Kids Bed - Twin size',
         image: ['Bedroom/B5/image1.jpeg', 'Bedroom/B5/image2.jpeg'],
-        description: '',
+        description: 'This collection is a perfect addition, it creates a sense of wonder and imagination to your kids space. This set includes charming wall art, vibrant colors, and adorable fox dolls from our best collection. The fox theme invites an imaginative journeys and playtime adventures.',
         price: '1075'
       }
     ]
