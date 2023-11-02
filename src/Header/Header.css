@@ -18,11 +18,16 @@
 
 .logo-banner {
     width: 150px;
-    padding: 15px;
+    padding: 7px;
 }
 
 .logo {
     cursor: pointer;
+}
+
+.logo-div {
+    display: flex;
+    gap: 20px;
 }
 
 .icon-div {
