@@ -125,10 +125,13 @@ function Header() {
                         </Menu>
                         <div className='icon-div'>
                             <IconButton
-                                sx={{ color: "#58869e" }}>
+                                sx={{ color: "#58869e" }}
+                                onClick={() => navigate('/favourites')}
+                            >
                                 <FavoriteIcon />
                             </IconButton>
                             <IconButton
+                                onClick={() => navigate('/cart')}
                                 sx={{ color: "#58869e" }}>
                                 <ShoppingCartIcon />
                             </IconButton>
