@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { categories } from '../Constants';
 import "./ProductDetails.css";
 import Layout from '../Layout/Layout';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { IconButton } from "@mui/material";
 
 const ProductDetails = () => {
   const { category, id } = useParams();
+  const navigate = useNavigate();
   const [productDetails, setProductDetails] = useState(undefined);
   const [productImages, setProductImages] = useState([]);
   const [currentImage, setCurrentImage] = useState('');
@@ -33,6 +36,9 @@ const ProductDetails = () => {
     <Layout>
       <div className="small-container single-product">
         <div className="row">
+          <IconButton sx={{ mb: 2, color: '#58869e' }} onClick={() => navigate('/')}>
+            <ArrowBackIcon />
+          </IconButton>
           <div className="col-2">
             <img src={require(`../assets/${currentImage}`)} width="100%"></img>
             <div className="small-img-row">
