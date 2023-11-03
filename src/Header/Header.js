@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AppBar,
     Toolbar,
     IconButton,
-    Button,
     InputBase,
-    Paper
+    Paper,
+    MenuItem,
+    Button,
+    Menu
 } from '@mui/material';
 import "./Header.css";
 import SearchIcon from '@mui/icons-material/Search';
@@ -14,6 +16,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { makeStyles } from '@mui/styles';
 import logo from "../assets/studioseven_logo.svg";
 import { useNavigate } from 'react-router-dom';
+import { categories } from '../Constants';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    MuiPopover: {
+
+    },
     inputRoot: {
         color: 'inherit',
     },
@@ -63,16 +69,25 @@ const useStyles = makeStyles((theme) => ({
 function Header() {
     const classes = useStyles();
     const navigate = useNavigate();
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleHover = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
             <Toolbar className={classes.toolbar}
                 sx={{ backgroundColor: "#faf5ef", boxShadow: 'none' }}
             >
                 <div className='toolbar-content'>
-                    <div className='logo'>
-                        <img src={logo} className='logo-banner' alt="logo" onClick={() => navigate('/')}></img>
-                    </div>
-                    <div className='toolbar-functions'>
+                    <div className='logo-div'>
+                        <div className='logo'>
+                            <img src={logo} className='logo-banner' alt="logo" onClick={() => navigate('/')}></img>
+                        </div>
                         <Paper
                             component="form"
                             sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '300px', height: '80%', boxShadow: 'none' }}
@@ -86,12 +101,37 @@ function Header() {
                                 <SearchIcon />
                             </IconButton>
                         </Paper>
+                    </div>
+                    <div className='toolbar-functions'>
+                        <Button
+                            sx={{ color: '#58869e', fontSize: '15px', fontWeight: 700 }}
+                            aria-controls="simple-menu"
+                            aria-haspopup="true"
+                            onMouseEnter={handleHover} // Trigger the dropdown on hover
+                        >
+                            Categories
+                        </Button>
+                        <Menu
+                            anchorEl={anchorEl}
+                            open={Boolean(anchorEl)}
+                            onClose={handleClose}
+                        >
+                            {categories.map((category, index) => (
+                                <MenuItem sx={{ color: '#58869e' }} key={index} onClick={() => {
+                                    handleClose();
+                                    navigate(`/${category.title}/products`);
+                                }}>{category.title}</MenuItem>
+                            ))}
+                        </Menu>
                         <div className='icon-div'>
                             <IconButton
-                                sx={{ color: "#58869e" }}>
+                                sx={{ color: "#58869e" }}
+                                onClick={() => navigate('/favourites')}
+                            >
                                 <FavoriteIcon />
                             </IconButton>
                             <IconButton
+                                onClick={() => navigate('/cart')}
                                 sx={{ color: "#58869e" }}>
                                 <ShoppingCartIcon />
                             </IconButton>

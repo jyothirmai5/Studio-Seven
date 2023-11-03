@@ -55,12 +55,11 @@ cursor: pointer;
 /*button*/
 .btn {
   display: inline-block;
-  background: #6ea6a1;
+  background: #58869e;
   color: #fff;
   padding: 8px 30px;
-  margin: 30px 0;
+  margin: 30px 15px 30px 0px;
   border-radius: 30px;
-  border: 2px solid #352f2f;
   text-decoration: none;
 }
 
