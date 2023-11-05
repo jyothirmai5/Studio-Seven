@@ -10,7 +10,6 @@
     padding-right: 25px;
     margin-top: 80px;
   }
-
   /*single product col-2*/
     .single-product .col-2 img {
       padding: 0;
@@ -61,13 +60,10 @@ cursor: pointer;
   margin: 30px 15px 30px 0px;
   border-radius: 30px;
   text-decoration: none;
+  transition: all 300ms ease;
 }
 
-.btn :hover {
-  background: #352f2f;
-  cursor: pointer;
 
-}
 
 .btn-fav {
   display: inline-table;
@@ -78,18 +74,14 @@ cursor: pointer;
   margin: 10px 0;
   font-size: 150%;  
   text-decoration: none;
-}
-
-.btn-fav :hover {
-  cursor: pointer;
-  background: rgb(36, 35, 35);
-  color: rgb(176, 0, 0);
+  transition: all 300ms ease;
 }
 
   /* general col-2*/
   .col-2 {
     flex-basis: 40%;
     min-width: 300px;
+    vertical-align: middle;
   }
   .col-2 img {
     max-width: 100%;
@@ -106,4 +98,7 @@ cursor: pointer;
     font-size: 110%;
   }
 
+  .section-text {
+    vertical-align: middle;
+  }
 

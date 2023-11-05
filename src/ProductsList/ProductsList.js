@@ -43,7 +43,7 @@ const ProductList = () => {
                   <Typography variant="body2" color="text.secondary">
                     Price: ${product.price}
                   </Typography>
-                  <Button variant="contained" color="primary" onClick={() => redirectToProductDetails(product.id)}>
+                  <Button variant="contained" color='primary' onClick={() => redirectToProductDetails(product.id)}>
                     Show more
                   </Button>
                 </CardContent>
