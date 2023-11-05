@@ -81,6 +81,12 @@ cursor: pointer;
   transition: all 300ms ease;
 }
 
+.btn-fav:hover {
+  cursor: pointer;
+  background: #e4b9b9;
+  color: rgb(255, 0, 0);
+}
+
   /* general col-2*/
   .col-2 {
     flex-basis: 40%;
