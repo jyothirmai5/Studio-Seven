@@ -13,7 +13,7 @@ import "./HomePage.css";
 
 const useStyles = makeStyles((theme) => ({
     categoryCard: {
-        height: "400px",
+        height: "500px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
