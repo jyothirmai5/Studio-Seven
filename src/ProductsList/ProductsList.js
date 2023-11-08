@@ -13,6 +13,7 @@ import { categories } from "../Constants";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import "./ProductsList.css";
 
 const ProductList = () => {
   const { category } = useParams();
@@ -21,6 +22,7 @@ const ProductList = () => {
   const redirectToProductDetails = (id) => {
     navigate("/" + category + "/products/" + id);
   };
+
   useEffect(() => {
     categories.map((item) => {
       if (item.title === category) {
@@ -49,16 +51,26 @@ const ProductList = () => {
                     image={require(`../assets/${product.image[0]}`)}
                     alt={product.name}
                   />
-                  <CardContent>
+                  <CardContent variant="outline" className="my-card">
                     <Typography variant="h6" component="div">
                       {product.name}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontSize: "23px",
+                        fontWeight: "bold",
+                        padding: "8px",
+                        color: "#58869e",
+                        fontFamily: "Poppins",
+                      }}
+                      color="text.secondary"
+                    >
                       Price: ${product.price}
                     </Typography>
                     <Button
                       variant="contained"
-                      sx={{ bgcolor: "#58869e" }}
+                      className="my-button"
                       onClick={() => redirectToProductDetails(product.id)}
                     >
                       Show more
