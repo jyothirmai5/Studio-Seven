@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../Layout/Layout';
 import "./Cart.css";
 import { Box, Button, Grid, Container } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { Store } from '../Context';
+// importing thankyou popup
+import ThankYouPopup from '../ThankYouPopup/ThankYouPopup';
 import EmptyPage from '../EmptyPage/EmptyPage';
 
 function Cart() {
+    const [showThankYouPopup, setShowThankYouPopup] = useState(false);
+
+    const handleCheckout = () => {
+        // Logic for handling checkout
+        // Show the thank you popup after successful checkout
+        setShowThankYouPopup(true);
+    };
+
+    const handleCloseThankYouPopup = () => {
+        setShowThankYouPopup(false);
+    };
     return (
         <Layout>
             <Store.Consumer>
@@ -60,10 +73,11 @@ function Cart() {
                                             <b>Total</b>
                                             <b>${totalPrice}</b>
                                         </div>
-                                        <Button className='checkout-btn'>Checkout</Button>
+                                        <Button className='checkout-btn' onClick={handleCheckout}>Checkout</Button>
                                     </Box>
                                 </Grid>
                             </Grid>
+                            <ThankYouPopup open={showThankYouPopup} onClose={handleCloseThankYouPopup} />
                         </div> :
                         <Container sx={{ padding: '40px', height: '50vh' }}>
                             <EmptyPage></EmptyPage></Container>
