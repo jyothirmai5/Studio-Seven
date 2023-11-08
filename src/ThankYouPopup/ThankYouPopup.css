@@ -1,0 +1,22 @@
+
+
+.thankyou-title{
+    font-weight: 700 !important;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.thankyou-comment{
+    color: #58869e;
+    text-align: center;
+}
+
+
+.thankyou-backhome{
+    width: 200px;
+    background-color: #58869e;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    margin: 20px auto;
+}
