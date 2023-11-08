@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/Group-7-Project/static/css/main.fe8fc0d8.css",
+    "main.js": "/Group-7-Project/static/js/main.01a354cf.js",
+    "static/media/image1.jpeg": "/Group-7-Project/static/media/image1.25b170fe4a0161a2b8e9.jpeg",
+    "static/media/image2.jpeg": "/Group-7-Project/static/media/image2.bc73ef60b9fb646ccf46.jpeg",
+    "static/media/bedroom-category.jpg": "/Group-7-Project/static/media/bedroom-category.c4271de85f6d3e93b03e.jpg",
+    "static/media/studioseven_hero_banner_2.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_2.39015e4c097fae4f668e.jpg",
+    "static/media/decor-category.jpg": "/Group-7-Project/static/media/decor-category.bb797277c0bcc085a063.jpg",
+    "static/media/studioseven_hero_banner_4.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_4.56f1363412e58c376bbc.jpg",
+    "static/media/studioseven_hero_banner_1.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_1.d76cd56a4f921afdccca.jpg",
+    "static/media/playroom-category.jpg": "/Group-7-Project/static/media/playroom-category.ea0c7352a56eb2449df3.jpg",
+    "static/media/studioseven_hero_banner_3.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_3.0c9ee0305227f977cb60.jpg",
+    "static/media/studioseven_hero_banner_4_sp.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_4_sp.74b28b24b8df76e451fb.jpg",
+    "static/media/studioseven_hero_banner_2_sp.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_2_sp.7116e23b1b032ae03a58.jpg",
+    "static/media/studioseven_hero_banner_1_sp.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_1_sp.371e5cff0a928395abc5.jpg",
+    "static/media/studioseven_hero_banner_3_sp.jpg": "/Group-7-Project/static/media/studioseven_hero_banner_3_sp.7da95be43d1707a629ca.jpg",
+    "static/media/studioseven_offer_banner1.jpg": "/Group-7-Project/static/media/studioseven_offer_banner1.e86c7de8504df8ea8e42.jpg",
+    "static/media/studioseven_offer_banner1.gif": "/Group-7-Project/static/media/studioseven_offer_banner1.329313cd463b96abb17d.gif",
+    "static/media/studioseven_offer_banner2.jpg": "/Group-7-Project/static/media/studioseven_offer_banner2.50a158dabc9e06ad3a8d.jpg",
+    "static/media/studioseven_offer_banner1_sp.jpg": "/Group-7-Project/static/media/studioseven_offer_banner1_sp.d12ee9b4289f93ecbd10.jpg",
+    "static/media/studioseven_offer_banner2_sp.jpg": "/Group-7-Project/static/media/studioseven_offer_banner2_sp.a821c91c57fcea506708.jpg",
+    "static/media/no-results.png": "/Group-7-Project/static/media/no-results.41ade0ad50c52a37aa05.png",
+    "static/media/studioseven_logo.svg": "/Group-7-Project/static/media/studioseven_logo.b0dd20d03572c0ef56c58e3f3bb9ad91.svg",
+    "static/media/slick.svg": "/Group-7-Project/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Group-7-Project/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Group-7-Project/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Group-7-Project/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Group-7-Project/index.html",
+    "main.fe8fc0d8.css.map": "/Group-7-Project/static/css/main.fe8fc0d8.css.map",
+    "main.01a354cf.js.map": "/Group-7-Project/static/js/main.01a354cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe8fc0d8.css",
+    "static/js/main.01a354cf.js"
+  ]
+}
