@@ -20,5 +20,25 @@
 .contained:hover {
   background: #e4b9b9;
   cursor: pointer;
-  text: #352f2f;
+  color: #352f2f;
  }
+
+ .show-more{
+  background-color: #58869e !important;
+ }
+
+ .my-button {
+   background-color: #58869e !important;
+   /* Initial background color */
+   color: #fff !important;
+   /* Initial text color */
+   transition: background-color 0.3s, color 0.3s !important;
+   /* Add a smooth transition effect */
+ }
+
+ /* Apply styles when hovering over the button */
+ .my-button:hover {
+   background-color: #e4b9b9 !important;
+   /* New background color on hover */
+ }
+
