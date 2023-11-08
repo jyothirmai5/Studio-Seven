@@ -56,7 +56,7 @@ const ProductDetails = () => {
     productDetails && (
       <Layout>
         <Store.Consumer>
-          {({ setCartItems }) => (
+          {({ setCartItems, setFavouriteItems, favouriteItems }) => (
             <div className="small-container single-product">
               <div className="row">
                 <IconButton
@@ -123,7 +123,16 @@ const ProductDetails = () => {
                         Added to cart!
                       </Alert>
                     </Snackbar>
-                    <a className="btn-fav">
+                    <a className={favouriteItems.some(item => JSON.stringify(item) === JSON.stringify(productDetails)) ? "btn-fav added-favourite" : "btn-fav"}
+                      onClick={() => {
+                        if (favouriteItems.some(item => JSON.stringify(item) === JSON.stringify(productDetails))) {
+                          const updatedArray = favouriteItems.filter(item => item.id !== productDetails.id);
+                          setFavouriteItems(updatedArray);
+                        } else {
+                          setFavouriteItems(data => [...data, productDetails])
+                        }
+                      }
+                      }>
                       &#10084;
                     </a>
                     <h3>Product Description</h3>
@@ -136,7 +145,7 @@ const ProductDetails = () => {
             </div>
           )}
         </Store.Consumer>
-      </Layout>
+      </Layout >
     )
   );
 };

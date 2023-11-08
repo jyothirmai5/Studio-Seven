@@ -58,7 +58,7 @@ const ProductList = () => {
                     </Typography>
                     <Button
                       variant="contained"
-                      color="primary"
+                      sx={{ bgcolor: "#58869e" }}
                       onClick={() => redirectToProductDetails(product.id)}
                     >
                       Show more
