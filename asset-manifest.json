@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Group-7-Project/static/css/main.fe8fc0d8.css",
-    "main.js": "/Group-7-Project/static/js/main.01a354cf.js",
+    "main.css": "/Group-7-Project/static/css/main.a587f6c1.css",
+    "main.js": "/Group-7-Project/static/js/main.bc92611c.js",
     "static/media/image1.jpeg": "/Group-7-Project/static/media/image1.25b170fe4a0161a2b8e9.jpeg",
     "static/media/image2.jpeg": "/Group-7-Project/static/media/image2.bc73ef60b9fb646ccf46.jpeg",
     "static/media/bedroom-category.jpg": "/Group-7-Project/static/media/bedroom-category.c4271de85f6d3e93b03e.jpg",
@@ -27,11 +27,11 @@
     "static/media/slick.ttf": "/Group-7-Project/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/Group-7-Project/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Group-7-Project/index.html",
-    "main.fe8fc0d8.css.map": "/Group-7-Project/static/css/main.fe8fc0d8.css.map",
-    "main.01a354cf.js.map": "/Group-7-Project/static/js/main.01a354cf.js.map"
+    "main.a587f6c1.css.map": "/Group-7-Project/static/css/main.a587f6c1.css.map",
+    "main.bc92611c.js.map": "/Group-7-Project/static/js/main.bc92611c.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe8fc0d8.css",
-    "static/js/main.01a354cf.js"
+    "static/css/main.a587f6c1.css",
+    "static/js/main.bc92611c.js"
   ]
 }
