@@ -45,7 +45,7 @@ const ProductList = () => {
                 <Card>
                   <CardMedia
                     component="img"
-                    height="320"
+                    height="330"
                     image={require(`../assets/${product.image[0]}`)}
                     alt={product.name}
                   />
