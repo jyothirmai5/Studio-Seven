@@ -107,7 +107,7 @@ function Header() {
                             sx={{ color: '#58869e', fontSize: '15px', fontWeight: 700 }}
                             aria-controls="simple-menu"
                             aria-haspopup="true"
-                            onMouseEnter={handleHover} // Trigger the dropdown on hover
+                            onClick={handleHover} // Trigger the dropdown on hover
                         >
                             Categories
                         </Button>
