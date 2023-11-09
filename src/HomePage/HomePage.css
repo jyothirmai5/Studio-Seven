@@ -20,9 +20,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 80%;
-
-    margin: 0, auto;
-    padding-bottom: 30px;
+    margin: 0 auto;
 }
 
 
@@ -55,7 +53,12 @@
 
 
 .category-content {
-    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.each-category-card {
+    width: 380px;
 }
 
 .css-2ulfj5-MuiTypography-root {
@@ -64,6 +67,6 @@
     font-weight: bold;
 }
 
-h4{
+h4 {
     font-size: 1rem;
 }

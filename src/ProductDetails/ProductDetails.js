@@ -54,9 +54,9 @@ const ProductDetails = () => {
     productImages &&
     currentImage &&
     productDetails && (
-      <Layout>
-        <Store.Consumer>
-          {({ setCartItems, setFavouriteItems, favouriteItems }) => (
+      <Store.Consumer>
+        {({ setCartItems, setFavouriteItems, favouriteItems, cartItems }) => (
+          <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
             <div className="small-container single-product">
               <div className="row">
                 <IconButton
@@ -143,11 +143,10 @@ const ProductDetails = () => {
                 </div>
               </div>
             </div>
-          )}
-        </Store.Consumer>
-      </Layout >
-    )
-  );
+          </Layout>
+        )}
+      </Store.Consumer>)
+  )
 };
 
 export default ProductDetails;

@@ -10,10 +10,10 @@ const Favourites = () => {
     const navigate = useNavigate();
 
     return (
-        <Layout>
-            <Store.Consumer>
-                {({ favouriteItems }) => (
-                    favouriteItems.length !== 0 ?
+        <Store.Consumer>
+            {({ favouriteItems, cartItems }) => (
+                <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+                    {favouriteItems.length !== 0 ?
                         <Container sx={{ margin: '50px' }}>
                             <h1 className='text-color'>Your Favourite List</h1>
                             <div className='each-card'>
@@ -38,10 +38,10 @@ const Favourites = () => {
                             </div>
                         </Container> :
                         <Container sx={{ margin: '50px', height: '50vh' }}>
-                            <EmptyPage></EmptyPage></Container>
-                )}
-            </Store.Consumer>
-        </Layout>
+                            <EmptyPage></EmptyPage></Container>}
+                </Layout>
+            )}
+        </Store.Consumer>
     );
 };
 

@@ -22,11 +22,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/:category/products" element={<ProductsList />} />
-        <Route path="/:category/products/:id" element={<Store.Provider value={{ setCartItems, setFavouriteItems, favouriteItems }}><ProductDetails /></Store.Provider>} />
-        <Route path="/favourites" element={<Store.Provider value={{ favouriteItems }}><Favourites /></Store.Provider>} />
-        <Route path="/cart" element={<Store.Provider value={{ cartItems, setCartItems, totalPrice }}><Cart /></Store.Provider>} />
+        <Route exact path="/" element={<Store.Provider value={{ favouriteItems, cartItems }}><HomePage /></Store.Provider>} />
+        <Route path="/:category/products" element={<Store.Provider value={{ favouriteItems, cartItems }}><ProductsList /></Store.Provider>} />
+        <Route path="/:category/products/:id" element={<Store.Provider value={{ setCartItems, setFavouriteItems, favouriteItems, cartItems }}><ProductDetails /></Store.Provider>} />
+        <Route path="/favourites" element={<Store.Provider value={{ favouriteItems, cartItems }}><Favourites /></Store.Provider>} />
+        <Route path="/cart" element={<Store.Provider value={{ cartItems, setCartItems, totalPrice, favouriteItems }}><Cart /></Store.Provider>} />
       </Routes>
     </Router>
   );

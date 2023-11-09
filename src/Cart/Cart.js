@@ -21,10 +21,10 @@ function Cart() {
         setShowThankYouPopup(false);
     };
     return (
-        <Layout>
-            <Store.Consumer>
-                {({ cartItems, setCartItems, totalPrice }) => (
-                    cartItems.length !== 0 ?
+        <Store.Consumer>
+            {({ cartItems, setCartItems, totalPrice, favouriteItems }) => (
+                <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+                    {cartItems.length !== 0 ?
                         <div style={{ margin: '50px' }}>
                             <h1 className='text-color'>Your Shopping Basket</h1>
                             <hr style={{ borderWidth: "0.5px" }} />
@@ -80,10 +80,11 @@ function Cart() {
                             <ThankYouPopup open={showThankYouPopup} onClose={handleCloseThankYouPopup} />
                         </div> :
                         <Container sx={{ padding: '40px', height: '50vh' }}>
-                            <EmptyPage></EmptyPage></Container>
-                )}
-            </Store.Consumer>
-        </Layout >);
+                            <EmptyPage></EmptyPage></Container>}
+                </Layout >
+            )}
+        </Store.Consumer>
+    );
 }
 
 export default Cart;

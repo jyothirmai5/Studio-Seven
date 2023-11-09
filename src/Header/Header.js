@@ -17,6 +17,7 @@ import { makeStyles } from '@mui/styles';
 import logo from "../assets/studioseven_logo.svg";
 import { useNavigate } from 'react-router-dom';
 import { categories } from '../Constants';
+import Badge from '@mui/material/Badge';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Header() {
+function Header({ cartItems, favouriteItems }) {
     const classes = useStyles();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -128,12 +129,16 @@ function Header() {
                                 sx={{ color: "#58869e" }}
                                 onClick={() => navigate('/favourites')}
                             >
-                                <FavoriteIcon />
+                                <Badge badgeContent={favouriteItems ? favouriteItems.length : 0} color="warning">
+                                    <FavoriteIcon />
+                                </Badge>
                             </IconButton>
                             <IconButton
                                 onClick={() => navigate('/cart')}
                                 sx={{ color: "#58869e" }}>
-                                <ShoppingCartIcon />
+                                <Badge badgeContent={cartItems ? cartItems.length : 0} color="warning">
+                                    <ShoppingCartIcon />
+                                </Badge>
                             </IconButton>
                         </div>
                     </div>

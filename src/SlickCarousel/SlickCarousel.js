@@ -7,6 +7,7 @@ import Image1 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_1.jp
 import Image2 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_2.jpg';
 import Image3 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_3.jpg';
 import Image4 from '../assets/banner/hero_banner_pc/studioseven_hero_banner_4.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
   Image1,
@@ -25,12 +26,12 @@ const SlickCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  const navigate = useNavigate();
   return (
     <div className="slick-carousel">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index}>
+          <div key={index} onClick={() => navigate('/Decor/products')}>
             <img src={image} alt={`Slide ${index + 1}`} />
           </div>
         ))}

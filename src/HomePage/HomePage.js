@@ -3,13 +3,13 @@ import SlickCarousel from '../SlickCarousel/SlickCarousel';
 import { makeStyles } from '@mui/styles';
 import {
     Paper,
-    Grid,
     Typography,
 } from '@mui/material';
 import { categories } from '../Constants';
 import { useNavigate } from 'react-router-dom';
 import SalePc from "../assets/banner/offer_banner_pc/studioseven_offer_banner1.gif";
 import "./HomePage.css";
+import { Store } from '../Context';
 
 const useStyles = makeStyles((theme) => ({
     categoryCard: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#58869e",
         textAlign: "center",
         paddingTop: "20px",
-        fontSize:"1rem"
+        fontSize: "1rem"
     },
 
 
@@ -41,37 +41,40 @@ function HomePage() {
     const redirectToProducts = (title) => {
         navigate('/' + title + '/products')
     }
-    return (<Layout>
-        <SlickCarousel />
-        <div className='main-content'>
-            <div className='hp-sale'>
-                <div className='sale-title'>
-                    <h1>SALE</h1>
-                </div>
-                <div className='sale-pc'><img src={SalePc} className="sale-image" alt="sale" onClick={() => navigate('/')}></img></div>
+    return (
+        <Store.Consumer>
+            {({ cartItems, favouriteItems }) => (
+                <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+                    <SlickCarousel />
+                    <div className='main-content'>
+                        <div className='hp-sale'>
+                            <div className='sale-title'>
+                                <h1>SALE</h1>
+                            </div>
+                            <div className='sale-pc'><img src={SalePc} className="sale-image" alt="sale" onClick={() => navigate('/')}></img></div>
 
-            </div>
-            <div className='category-title'>
-                <h1>CATEGORY</h1>
-            </div>
-            <div class="category-content">
-                <Grid container spacing={2}>
-                    {categories.map((category, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index} onClick={() => redirectToProducts(category.title)}>
-                            <Paper
-                                className={classes.categoryCard}
-                                style={{ backgroundImage: `url(${category.imageUrl})` }}
-                            ></Paper>
-                            <Typography variant="h4" className={classes.categoryTitle}>
-                                {category.title}
-                            </Typography>
+                        </div>
+                        <div className='category-title'>
+                            <h1>CATEGORY</h1>
+                        </div>
+                        <div class="category-content">
+                            {categories.map((category, index) => (
+                                <div className='each-category-card' key={index} onClick={() => redirectToProducts(category.title)}>
+                                    <Paper
+                                        className={classes.categoryCard}
+                                        style={{ backgroundImage: `url(${category.imageUrl})` }}
+                                    ></Paper>
+                                    <Typography variant="h4" className={classes.categoryTitle}>
+                                        {category.title}
+                                    </Typography>
 
-                        </Grid>
-                    ))}
-                </Grid>
-            </div>
-        </div>
-    </Layout>);
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Layout>
+            )}
+        </Store.Consumer>);
 }
 
 export default HomePage;
