@@ -37,4 +37,57 @@
     background-color: #faf5ef;
     padding: 10px 0;
   }
+
+  .Subscription {
+    text-align: center;
+    background-color: #faf5ef;
+    padding: 10px 0;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+  margin: auto 0px;
+  cursor: pointer;
+}
+
+  .Subscription-text {
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  .Subscription-form {
+    display: inline-block;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 15px 15px 15px 15px;
+    border-radius: none;
+    text-decoration: none;
+    transition: all 300ms ease;
+  }
+
+  .Subscription-btn {
+    display: inline-block;
+    background: #58869e;
+    color: #fff;
+    padding: 9px 12px;
+    margin: 15px 15px 15px 0px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 300ms ease;
+    border: none;
+  }
+
+  .Subscription-btn:hover {
+    background: #e4b9b9;
+    cursor: pointer;
+    color: #752c2c;
+  }
+
+.hr {
+  max-width: 1200px;
+}
+  
   
