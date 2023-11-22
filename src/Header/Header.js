@@ -7,7 +7,7 @@ import {
     Paper,
     MenuItem,
     Button,
-    Menu
+    Menu, Drawer, List, ListItem, ListItemText
 } from '@mui/material';
 import "./Header.css";
 import SearchIcon from '@mui/icons-material/Search';
@@ -18,6 +18,7 @@ import logo from "../assets/studioseven_logo.svg";
 import { useNavigate } from 'react-router-dom';
 import { categories } from '../Constants';
 import Badge from '@mui/material/Badge';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -71,7 +72,16 @@ function Header({ cartItems, favouriteItems }) {
     const classes = useStyles();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
-
+    const [isDrawerOpen, setDrawerOpen] = useState(false);
+    const menuItems = [
+        { text: 'home', link: '/' },
+        { text: 'favorites', link: '/favourites' },
+        { text: 'Cart', link: '/cart' },
+        // Add more menu items as needed
+    ];
+    const toggleDrawer = (open) => () => {
+        setDrawerOpen(open);
+    };
     const handleHover = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -79,72 +89,97 @@ function Header({ cartItems, favouriteItems }) {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const openHamburger = () => {
+
+
+    }
     return (
-        <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
-            <Toolbar className={classes.toolbar}
-                sx={{ backgroundColor: "#faf5ef", boxShadow: 'none' }}
-            >
-                <div className='toolbar-content'>
-                    <div className='logo-div'>
-                        <div className='logo'>
-                            <img src={logo} className='logo-banner' alt="logo" onClick={() => navigate('/')}></img>
+        <>
+            <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
+                <Toolbar className={classes.toolbar}
+                    sx={{ backgroundColor: "#faf5ef", boxShadow: 'none' }}
+                >
+
+                    <div className='toolbar-content'>
+                        <div className='sp-menu'>
+                        <IconButton
+                            edge="start"
+                            aria-label="menu"
+                            onClick={toggleDrawer(true)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                         </div>
-                        <Paper
-                            component="form"
-                            sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '300px', height: '80%', boxShadow: 'none' }}
-                        >
-                            <InputBase
-                                sx={{ ml: 1, flex: 1 }}
-                                placeholder="Search..."
-                                inputProps={{ 'aria-label': 'search...' }}
-                            />
-                            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                                <SearchIcon />
-                            </IconButton>
-                        </Paper>
-                    </div>
-                    <div className='toolbar-functions'>
-                        <Button
-                            sx={{ color: '#58869e', fontSize: '15px', fontWeight: 700 }}
-                            aria-controls="simple-menu"
-                            aria-haspopup="true"
-                            onClick={handleHover} // Trigger the dropdown on hover
-                        >
-                            Categories
-                        </Button>
-                        <Menu
-                            anchorEl={anchorEl}
-                            open={Boolean(anchorEl)}
-                            onClose={handleClose}
-                        >
-                            {categories.map((category, index) => (
-                                <MenuItem sx={{ color: '#58869e' }} key={index} onClick={() => {
-                                    handleClose();
-                                    navigate(`/${category.title}/products`);
-                                }}>{category.title}</MenuItem>
-                            ))}
-                        </Menu>
-                        <div className='icon-div'>
-                            <IconButton
-                                sx={{ color: "#58869e" }}
-                                onClick={() => navigate('/favourites')}
+                        <div className='logo-div'>
+                            <div className='logo'>
+                                <img src={logo} className='logo-banner' alt="logo" onClick={() => navigate('/')}></img>
+                            </div>
+                            <div className='search'>
+                                <Paper
+                                    component="form"
+                                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: '300px', height: '80%', boxShadow: 'none' }}
+                                >
+                                    <InputBase
+                                        sx={{ ml: 1, flex: 1 }}
+                                        placeholder="Search..."
+                                        inputProps={{ 'aria-label': 'search...' }} />
+                                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                                        <SearchIcon />
+                                    </IconButton>
+                                </Paper>
+                            </div>
+                        </div>
+                        <div className='toolbar-functions'>
+                            <Button
+                                sx={{ color: '#58869e', fontSize: '15px', fontWeight: 700 }}
+                                aria-controls="simple-menu"
+                                aria-haspopup="true"
+                                onClick={handleHover} // Trigger the dropdown on hover
                             >
-                                <Badge badgeContent={favouriteItems ? favouriteItems.length : 0} color="warning">
-                                    <FavoriteIcon />
-                                </Badge>
-                            </IconButton>
-                            <IconButton
-                                onClick={() => navigate('/cart')}
-                                sx={{ color: "#58869e" }}>
-                                <Badge badgeContent={cartItems ? cartItems.length : 0} color="warning">
-                                    <ShoppingCartIcon />
-                                </Badge>
-                            </IconButton>
+                                Categories
+                            </Button>
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleClose}
+                            >
+                                {categories.map((category, index) => (
+                                    <MenuItem sx={{ color: '#58869e' }} key={index} onClick={() => {
+                                        handleClose();
+                                        navigate(`/${category.title}/products`);
+                                    }}>{category.title}</MenuItem>
+                                ))}
+                            </Menu>
+                            <div className='icon-div'>
+                                <IconButton
+                                    sx={{ color: "#58869e" }}
+                                    onClick={() => navigate('/favourites')}
+                                >
+                                    <Badge badgeContent={favouriteItems ? favouriteItems.length : 0} color="warning">
+                                        <FavoriteIcon />
+                                    </Badge>
+                                </IconButton>
+                                <IconButton
+                                    onClick={() => navigate('/cart')}
+                                    sx={{ color: "#58869e" }}>
+                                    <Badge badgeContent={cartItems ? cartItems.length : 0} color="warning">
+                                        <ShoppingCartIcon />
+                                    </Badge>
+                                </IconButton>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Toolbar>
-        </AppBar>
+                </Toolbar>
+            </AppBar>
+            <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+                <List>
+                    {menuItems.map((item) => (
+                        <ListItem button key={item.text}>
+                            <ListItemText primary={item.text} />
+                        </ListItem>
+                    ))}
+                </List>
+            </Drawer></>
     );
 }
 
