@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { IconButton } from "@mui/material";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 function Footer() {
   return (
@@ -59,11 +59,11 @@ function Footer() {
           fontSize="large"
           className="icon"
         ></InstagramIcon>
-        <LanguageOutlinedIcon
-          onClick={() => window.open("https://www.instagram.com", "_blank")}
+        <TwitterIcon
+          onClick={() => window.open("https://www.twitter.com", "_blank")}
           fontSize="large"
           className="icon"
-        ></LanguageOutlinedIcon>
+        ></TwitterIcon>
       </div>
       <hr className="hr"></hr>
       <div className="footer-bottom">
