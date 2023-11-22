@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Container, Grid, Button, IconButton } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../Layout/Layout';
 import { Store } from '../Context';
@@ -9,6 +9,19 @@ import EmptyPage from '../EmptyPage/EmptyPage';
 const Favourites = () => {
     const navigate = useNavigate();
 
+    const redirectToProduct = (categoryId, productId) => {
+        switch (categoryId) {
+            case 0:
+                navigate('/Decor/products/' + productId)
+                break;
+            case 1:
+                navigate('/Bedroom/products/' + productId)
+                break;
+            case 2:
+                navigate('/Playroom/products/' + productId)
+                break;
+        }
+    }
     return (
         <Store.Consumer>
             {({ favouriteItems, cartItems }) => (
@@ -18,7 +31,8 @@ const Favourites = () => {
                             <h1 className='text-color'>Your Favourite List</h1>
                             <div className='each-card'>
                                 {favouriteItems && favouriteItems.map((product, index) => (
-                                    <Card>
+                                    <Card
+                                        onClick={() => redirectToProduct(product.categoryId, product.id)}>
                                         <CardMedia
                                             component="img"
                                             height="250"
