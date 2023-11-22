@@ -14,28 +14,30 @@ function Footer() {
         <div className="footer-section">
           <h3>Help & Support</h3>
           <ul>
-            <li onClick={() => navigate("/help")}>FAQ</li>
-            <li>Track Your Order</li>
-            <li>Returns & Exchanges</li>
-            <li>Customer Service</li>
+            <li className="footer-text" onClick={() => navigate("/help")}>
+              FAQ
+            </li>
+            <li className="footer-text">Track Your Order</li>
+            <li className="footer-text">Returns & Exchanges</li>
+            <li className="footer-text">Customer Service</li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Company</h3>
           <ul>
-            <li>About Us</li>
-            <li>Terms & Conditions</li>
-            <li>Privacy Policy</li>
-            <li>Careers</li>
+            <li className="footer-text">About Us</li>
+            <li className="footer-text">Terms & Conditions</li>
+            <li className="footer-text">Privacy Policy</li>
+            <li className="footer-text">Careers</li>
           </ul>
         </div>
         <div className="footer-section">
           <h3>Connect With Us</h3>
           <ul>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Instagram</li>
-            <li>YouTube</li>
+            <li className="footer-text">Facebook</li>
+            <li className="footer-text">Twitter</li>
+            <li className="footer-text">Instagram</li>
+            <li className="footer-text">YouTube</li>
           </ul>
         </div>
       </div>

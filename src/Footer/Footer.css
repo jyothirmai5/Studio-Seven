@@ -4,6 +4,12 @@
     padding: 20px 0;
     margin-top: 24px;
   }
+
+.footer-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+
+}
   
   .footer-content {
     display: flex;
