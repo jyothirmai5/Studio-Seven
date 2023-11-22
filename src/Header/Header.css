@@ -16,6 +16,25 @@
     justify-content: flex-end;
 }
 
+@media (min-width: 769px) {
+    .sp-menu {
+    display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    .toolbar-functions {
+    display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    .search {
+    display: none;
+    }
+}
+
+
 .logo-banner {
     width: 150px;
     padding: 7px;
