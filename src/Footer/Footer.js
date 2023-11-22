@@ -3,15 +3,18 @@ import "./Footer.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { IconButton } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
           <h3>Help & Support</h3>
           <ul>
-            <li>FAQ</li>
+            <li onClick={() => navigate("/help")}>FAQ</li>
             <li>Track Your Order</li>
             <li>Returns & Exchanges</li>
             <li>Customer Service</li>
