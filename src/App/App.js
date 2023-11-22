@@ -7,6 +7,7 @@ import ProductDetails from '../ProductDetails/ProductDetails';
 import Favourites from '../Favourites/Favourites';
 import Cart from '../Cart/Cart';
 import { Store } from '../Context';
+import HelpPage from '../HelpPage/HelpPage';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/:category/products/:id" element={<Store.Provider value={{ setCartItems, setFavouriteItems, favouriteItems, cartItems }}><ProductDetails /></Store.Provider>} />
         <Route path="/favourites" element={<Store.Provider value={{ favouriteItems, cartItems }}><Favourites /></Store.Provider>} />
         <Route path="/cart" element={<Store.Provider value={{ cartItems, setCartItems, totalPrice, favouriteItems }}><Cart /></Store.Provider>} />
+        <Route path="/help" element={<HelpPage></HelpPage>} />
       </Routes>
     </Router>
   );
