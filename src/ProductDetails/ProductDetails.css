@@ -68,7 +68,7 @@ input :focus {
 .btn:hover {
   background: #e4b9b9;
   cursor: pointer;
-  text: #352f2f;
+  color: #752c2c;
 }
 
 .btn-fav {
