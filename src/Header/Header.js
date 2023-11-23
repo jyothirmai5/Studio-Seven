@@ -168,7 +168,7 @@ function Header({ cartItems, favouriteItems }) {
             <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
                 <List>
                     {menuItems.map((item) => (
-                        <ListItem key={item.text} onClick={() => navigate(item.link)}>
+                        <ListItem style={{ cursor: "pointer" }} key={item.text} onClick={() => navigate(item.link)}>
                             <ListItemText primary={item.text} />
                         </ListItem>
                     ))}
