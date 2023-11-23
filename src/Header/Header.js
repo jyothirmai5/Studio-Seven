@@ -50,9 +50,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    MuiPopover: {
-
-    },
+    MuiPopover: {},
     inputRoot: {
         color: 'inherit',
     },
@@ -74,8 +72,8 @@ function Header({ cartItems, favouriteItems }) {
     const [anchorEl, setAnchorEl] = useState(null);
     const [isDrawerOpen, setDrawerOpen] = useState(false);
     const menuItems = [
-        { text: 'home', link: '/' },
-        { text: 'favorites', link: '/favourites' },
+        { text: 'Home', link: '/' },
+        { text: 'Favourites', link: '/favourites' },
         { text: 'Cart', link: '/cart' },
         // Add more menu items as needed
     ];
@@ -89,10 +87,6 @@ function Header({ cartItems, favouriteItems }) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const openHamburger = () => {
-
-
-    }
     return (
         <>
             <AppBar position="static" className={classes.root} sx={{ boxShadow: '0 1px 0 0 #ecedeb', margin: '0px auto' }}>
@@ -102,13 +96,13 @@ function Header({ cartItems, favouriteItems }) {
 
                     <div className='toolbar-content'>
                         <div className='sp-menu'>
-                        <IconButton
-                            edge="start"
-                            aria-label="menu"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
+                            <IconButton
+                                edge="start"
+                                aria-label="menu"
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
                         </div>
                         <div className='logo-div'>
                             <div className='logo'>
@@ -174,7 +168,7 @@ function Header({ cartItems, favouriteItems }) {
             <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
                 <List>
                     {menuItems.map((item) => (
-                        <ListItem button key={item.text}>
+                        <ListItem key={item.text} onClick={() => navigate(item.link)}>
                             <ListItemText primary={item.text} />
                         </ListItem>
                     ))}
