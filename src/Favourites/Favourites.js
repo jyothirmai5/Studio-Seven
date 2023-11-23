@@ -32,6 +32,7 @@ const Favourites = () => {
                             <div className='each-card'>
                                 {favouriteItems && favouriteItems.map((product, index) => (
                                     <Card
+                                        style={{ minWidth: '250px' }}
                                         onClick={() => redirectToProduct(product.categoryId, product.id)}>
                                         <CardMedia
                                             component="img"
