@@ -8,7 +8,10 @@
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
-  margin-top: 80px;
+}
+
+.single-product {
+  margin: 40px 20px;
 }
 
 /*single product col-2*/
@@ -152,4 +155,15 @@ input :focus {
 .breadcrumbs-link-active {
   color: #58869e;
   font-weight: bold;
+}
+
+.right-side-div {
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+@media (max-width: 769px) {
+  .single-product {
+    margin: 20px 10px;
+  }
 }

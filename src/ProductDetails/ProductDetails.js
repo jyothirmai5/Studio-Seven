@@ -58,12 +58,33 @@ const ProductDetails = () => {
         {({ setCartItems, setFavouriteItems, favouriteItems, cartItems }) => (
           <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
             <div className="small-container single-product">
-              <div className="row">
+              <div style={{ display: 'flex' }}>
                 <IconButton
-                  sx={{ mb: 2, color: "#58869e" }}
+                  sx={{ mb: 2, color: "#58869e", margin: 'auto 0px' }}
                   onClick={() => navigate("/")}>
                   <ArrowBackIcon />
                 </IconButton>
+                <ul className="breadcrumbs">
+                  <li className="breadcrumbs-items">
+                    <a href="http://localhost:3000/" className="breadcrumbs-link">
+                      Home
+                    </a>
+                  </li>
+                  <li className="breadcrumbs-items">
+                    <a
+                      href="http://localhost:3000/Decor/products"
+                      className="breadcrumbs-link">
+                      Category
+                    </a>
+                  </li>
+                  <li className="breadcrumbs-items">
+                    <a href="" className="breadcrumbs-link breadcrumbs-link-active">
+                      {category && <p>{category}</p>}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="row">
                 <div className="col-2">
                   <img
                     src={require(`../assets/${currentImage}`)}
@@ -85,25 +106,7 @@ const ProductDetails = () => {
                   </div>
                 </div>
                 <div className="col-2">
-                  <ul className="breadcrumbs">
-                    <li className="breadcrumbs-items">
-                      <a href="http://localhost:3000/" className="breadcrumbs-link">
-                        Home
-                      </a>
-                    </li>
-                    <li className="breadcrumbs-items">
-                      <a
-                        href="http://localhost:3000/Decor/products"
-                        className="breadcrumbs-link">
-                        Category
-                      </a>
-                    </li>
-                    <li className="breadcrumbs-items">
-                      <a href="" className="breadcrumbs-link breadcrumbs-link-active">
-                        {category && <p>{category}</p>}
-                      </a>
-                    </li>
-                  </ul>
+
                   <h1 className="ProductTittle">{productDetails.tilte}</h1>
                   <h4>${productDetails.price}</h4>
                   <input type="number" min={1} max={5} defaultValue={1}></input>
