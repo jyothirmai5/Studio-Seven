@@ -151,3 +151,11 @@ export const categories = [
     ]
   }
 ];
+
+export const ROOT_PATH = 'http://localhost:3001/api';
+export const CATEGORIES_PATH = `${ROOT_PATH}/categories`;
+export const PRODUCTS_PATH = `${ROOT_PATH}/products`;
+export const PRODUCTS_BY_CATEGORY = `${ROOT_PATH}/category/products`;
+export const PRODUCTS_BY_SEARCH = `${ROOT_PATH}/search`;
+export const FAVORITES_PATH = `${ROOT_PATH}/favorites`;
+export const CART_PATH = `${ROOT_PATH}/cart`;

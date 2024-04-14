@@ -1,17 +1,18 @@
 import Layout from '../Layout/Layout';
 import SlickCarousel from '../SlickCarousel/SlickCarousel';
-import { makeStyles } from '@mui/styles';
+import { styled } from "@mui/system";
 import {
     Paper,
     Typography,
 } from '@mui/material';
-import { categories } from '../Constants';
+import { PRODUCTS_PATH } from '../Constants';
 import { useNavigate } from 'react-router-dom';
 import SalePc from "../assets/banner/offer_banner_pc/studioseven_offer_banner1.gif";
 import "./HomePage.css";
 import { Store } from '../Context';
+import axios from 'axios';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = styled((theme) => ({
     categoryCard: {
         height: "500px",
         display: "flex",
@@ -38,13 +39,18 @@ const useStyles = makeStyles((theme) => ({
 function HomePage() {
     const classes = useStyles();
     const navigate = useNavigate();
-    const redirectToProducts = (title) => {
-        navigate('/' + title + '/products')
+
+    const redirectToProducts = async (category) => {
+        const response = await axios.get(
+            `${PRODUCTS_PATH}/${category.category_id}`
+        )
+        console.log('category products', response);
+        navigate('/' + category.category_id + '/products')
     }
     return (
         <Store.Consumer>
-            {({ cartItems, favouriteItems }) => (
-                <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+            {({ categories, cartItems, favouriteItems }) => (
+                <Layout categories={categories} cartItems={cartItems} favouriteItems={favouriteItems}>
                     <SlickCarousel />
                     <div className='main-content'>
                         <div className='hp-sale'>
@@ -57,15 +63,15 @@ function HomePage() {
                         <div className='category-title'>
                             <h1>CATEGORY</h1>
                         </div>
-                        <div class="category-content">
+                        <div className="category-content">
                             {categories.map((category, index) => (
-                                <div className='each-category-card' key={index} onClick={() => redirectToProducts(category.title)}>
+                                <div className='each-category-card' key={index} onClick={() => redirectToProducts(category)}>
                                     <Paper
                                         className={classes.categoryCard}
-                                        style={{ backgroundImage: `url(${category.imageUrl})` }}
                                     ></Paper>
+                                    <img className='category-image' src={`data:image/jpeg;base64,${category.category_image}`}></img>
                                     <Typography variant="h4" className={classes.categoryTitle}>
-                                        {category.title}
+                                        {category.category_name}
                                     </Typography>
 
                                 </div>

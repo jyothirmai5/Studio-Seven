@@ -44,7 +44,7 @@ function Footer() {
       <hr className="hr"></hr>
       <div className="Subscription">
         <form action="/action_page.php" id="form1">
-          <label className="Subscription-text" for="fname">
+          <label className="Subscription-text" htmlFor="fname">
             Subscribe to Our Shop
           </label>
           <input

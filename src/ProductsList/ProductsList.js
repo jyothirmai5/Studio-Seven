@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import {
   Card,
   CardContent,
@@ -9,7 +10,7 @@ import {
   Button,
   IconButton,
 } from "@mui/material";
-import { categories } from "../Constants";
+import { PRODUCTS_BY_CATEGORY, PRODUCTS_BY_SEARCH } from "../Constants";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -17,25 +18,41 @@ import "./ProductsList.css";
 import { Store } from '../Context';
 
 const ProductList = () => {
-  const { category } = useParams();
+  const { categoryId, searchText } = useParams();
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
-  const redirectToProductDetails = (id) => {
-    navigate("/" + category + "/products/" + id);
+  const redirectToProductDetails = (product) => {
+    navigate("/" + product.category_id + "/products/" + product.product_id);
   };
 
   useEffect(() => {
-    categories.map((item) => {
-      if (item.title === category) {
-        setProducts(item.product);
-      }
-    });
-  }, [category]);
+    if (categoryId) {
+      const fetchProducts = (async () => {
+        const response = await axios.get(
+          `${PRODUCTS_BY_CATEGORY}/${categoryId}`
+        )
+        if (response.data) {
+          setProducts(response.data);
+        }
+      });
+      fetchProducts();
+    } else if (searchText) {
+      const fetchProductsUsingSearchText = (async () => {
+        const response = await axios.get(
+          `${PRODUCTS_BY_SEARCH}?q=${searchText}`
+        )
+        if (response.data) {
+          setProducts(response.data);
+        }
+      });
+      fetchProductsUsingSearchText();
+    }
+  }, [categoryId, searchText]);
 
   return (
     <Store.Consumer>
-      {({ cartItems, favouriteItems }) => (
-        <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+      {({ categories, cartItems, favouriteItems }) => (
+        <Layout categories={categories} cartItems={cartItems} favouriteItems={favouriteItems}>
           <Container sx={{ padding: "40px" }}>
             <IconButton
               sx={{ mb: 2, color: "#58869e" }}
@@ -51,12 +68,12 @@ const ProductList = () => {
                       <CardMedia
                         component="img"
                         height="330"
-                        image={require(`../assets/${product.image[0]}`)}
-                        alt={product.name}
+                        src={`data:image/jpeg;base64,${product.product_image}`}
+                        alt={product.product_name}
                       />
                       <CardContent variant="outline" className="my-card">
                         <Typography variant="h6" component="div">
-                          {product.name}
+                          {product.product_name}
                         </Typography>
                         <Typography
                           variant="body2"
@@ -69,12 +86,12 @@ const ProductList = () => {
                           }}
                           color="text.secondary"
                         >
-                          Price: ${product.price}
+                          Price: ${product.product_price}
                         </Typography>
                         <Button
                           variant="contained"
                           className="my-button"
-                          onClick={() => redirectToProductDetails(product.id)}
+                          onClick={() => redirectToProductDetails(product)}
                         >
                           Show more
                         </Button>

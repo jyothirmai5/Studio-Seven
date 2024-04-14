@@ -13,14 +13,13 @@ import "./Header.css";
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { makeStyles } from '@mui/styles';
+import { styled } from "@mui/system";
 import logo from "../assets/studioseven_logo.svg";
 import { useNavigate } from 'react-router-dom';
-import { categories } from '../Constants';
 import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = styled((theme) => ({
     root: {
         backgroundColor: '#222 !important',
         marginBottom: '24px',
@@ -66,11 +65,24 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Header({ cartItems, favouriteItems }) {
+function Header({ categories, cartItems, favouriteItems }) {
     const classes = useStyles();
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
     const [isDrawerOpen, setDrawerOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState('');
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            navigate(`/products/${searchTerm}`)
+        }
+    };
+
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
     const menuItems = [
         { text: 'Home', link: '/' },
         { text: 'Favourites', link: '/favourites' },
@@ -116,7 +128,11 @@ function Header({ cartItems, favouriteItems }) {
                                     <InputBase
                                         sx={{ ml: 1, flex: 1 }}
                                         placeholder="Search..."
-                                        inputProps={{ 'aria-label': 'search...' }} />
+                                        inputProps={{ 'aria-label': 'search...' }}
+                                        value={searchTerm}
+                                        onChange={handleChange}
+                                        onKeyPress={handleKeyPress}
+                                    />
                                     <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
                                         <SearchIcon />
                                     </IconButton>
@@ -140,8 +156,8 @@ function Header({ cartItems, favouriteItems }) {
                                 {categories.map((category, index) => (
                                     <MenuItem sx={{ color: '#58869e' }} key={index} onClick={() => {
                                         handleClose();
-                                        navigate(`/${category.title}/products`);
-                                    }}>{category.title}</MenuItem>
+                                        navigate(`/${category.category_id}/products`);
+                                    }}>{category.category_name}</MenuItem>
                                 ))}
                             </Menu>
                             <div className='icon-div'>

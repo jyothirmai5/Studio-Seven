@@ -10,22 +10,13 @@ const Favourites = () => {
     const navigate = useNavigate();
 
     const redirectToProduct = (categoryId, productId) => {
-        switch (categoryId) {
-            case 0:
-                navigate('/Decor/products/' + productId)
-                break;
-            case 1:
-                navigate('/Bedroom/products/' + productId)
-                break;
-            case 2:
-                navigate('/Playroom/products/' + productId)
-                break;
-        }
+        navigate(`/${categoryId}/products/${productId}`)
     }
+
     return (
         <Store.Consumer>
-            {({ favouriteItems, cartItems }) => (
-                <Layout cartItems={cartItems} favouriteItems={favouriteItems}>
+            {({ favouriteItems, cartItems, categories }) => (
+                <Layout cartItems={cartItems} favouriteItems={favouriteItems} categories={categories}>
                     {favouriteItems.length !== 0 ?
                         <Container sx={{ margin: '50px' }}>
                             <h1 className='text-color'>Your Favourite List</h1>
@@ -33,19 +24,19 @@ const Favourites = () => {
                                 {favouriteItems && favouriteItems.map((product, index) => (
                                     <Card
                                         style={{ minWidth: '250px' }}
-                                        onClick={() => redirectToProduct(product.categoryId, product.id)}>
+                                        onClick={() => redirectToProduct(product.category_id, product.product_id)}>
                                         <CardMedia
                                             component="img"
                                             height="250"
-                                            image={require(`../assets/${product.image[0]}`)}
-                                            alt={product.name}
+                                            src={`data:image/jpeg;base64,${product.product_image}`}
+                                            alt={product.product_name}
                                         />
                                         <CardContent>
                                             <Typography variant="h6" component="div">
-                                                {product.tilte}
+                                                {product.product_name}
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
-                                                Price: ${product.price}
+                                                Price: ${product.product_price}
                                             </Typography>
                                         </CardContent>
                                     </Card>

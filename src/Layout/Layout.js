@@ -1,13 +1,9 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { useEffect } from "react";
 
-function Layout({ children, cartItems, favouriteItems }) {
-    useEffect(() => {
-        console.log('cartItems', cartItems);
-    }, [cartItems])
+function Layout({ children, cartItems, favouriteItems, categories }) {
     return (<>
-        <Header cartItems={cartItems} favouriteItems={favouriteItems} />
+        <Header cartItems={cartItems} categories={categories} favouriteItems={favouriteItems} />
         {children}
         <Footer />
     </>
