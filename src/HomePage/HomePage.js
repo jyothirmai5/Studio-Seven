@@ -12,32 +12,29 @@ import "./HomePage.css";
 import { Store } from '../Context';
 import axios from 'axios';
 
-const useStyles = styled((theme) => ({
-    categoryCard: {
-        height: "500px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-        "&:hover": {
-            cursor: "pointer",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-        },
+const categoryCard = styled('div')(({ theme }) => ({
+    height: "500px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    '&:hover': {
+        cursor: "pointer",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
     },
-    categoryTitle: {
-        color: "#58869e",
-        textAlign: "center",
-        paddingTop: "20px",
-        fontSize: "1rem"
-    },
-
-
 }));
+
+const categoryTitle = styled('div')(({ theme }) => ({
+    color: "#58869e",
+    textAlign: "center",
+    paddingTop: "20px",
+    fontSize: "1rem"
+}));
+
 function HomePage() {
-    const classes = useStyles();
     const navigate = useNavigate();
 
     const redirectToProducts = async (category) => {
@@ -67,10 +64,10 @@ function HomePage() {
                             {categories.map((category, index) => (
                                 <div className='each-category-card' key={index} onClick={() => redirectToProducts(category)}>
                                     <Paper
-                                        className={classes.categoryCard}
+                                        className={categoryCard}
                                     ></Paper>
                                     <img className='category-image' src={`data:image/jpeg;base64,${category.category_image}`}></img>
-                                    <Typography variant="h4" className={classes.categoryTitle}>
+                                    <Typography variant="h4" className={categoryTitle}>
                                         {category.category_name}
                                     </Typography>
 

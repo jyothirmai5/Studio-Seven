@@ -23,7 +23,7 @@ function Cart() {
 
     const callClearCart = (fetchCart, setCartItems) => {
         const clearCart = async (fetchCart) => {
-            const response = await axios.put(
+            const response = await axios.delete(
                 `${CART_PATH}/clear`
             );
             if (response) {
